@@ -27,8 +27,11 @@
       <p class="status">Status: {{ showOptimized ? 'Optimized' : 'Unoptimized' }}</p>
     </div>
   </section>
-
-  <section class="content-blocks">
+  <div class="block-to-push-down-content">
+    <h2>Push down content</h2>
+    <p>The height of this block will move the content blocks down and out of the viewport.</p>
+  </div>
+  <section class="content-blocks" >
     <app-content-block
       *ngFor="let block of blocks"
       [title]="block"

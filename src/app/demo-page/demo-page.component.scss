@@ -56,7 +56,19 @@
     }
   }
 
+
+
   .status {
     font-weight: bold;
   }
 } 
+
+.block-to-push-down-content {
+  min-height: 1000px;
+  background: #f8f9fa;
+  display: flex;
+  justify-content: start;
+  margin-top: 20px;
+  align-items: center;
+  flex-direction: column;
+}
