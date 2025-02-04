@@ -1,0 +1,38 @@
+<div class="demo-container">
+  <section class="tutorial">
+    <h1>Content Visibility Demo</h1>
+    <div class="explanation">
+      <h2>What is content-visibility?</h2>
+      <p>
+        The CSS <code>content-visibility</code> property enables us to skip rendering of off-screen content until it's needed.
+        This can significantly improve page load performance for long scrolling pages.
+      </p>
+
+      <h2>How to use it:</h2>
+      <pre><code>.my-component {{ '{' }}
+  content-visibility: auto;
+  contain-intrinsic-size: 400px;
+{{ '}' }}</code></pre>
+
+      <p>
+        The <code>contain-intrinsic-size</code> property helps prevent layout shifts by telling the browser
+        the approximate size of the hidden content.
+      </p>
+    </div>
+
+    <div class="demo-controls">
+      <button (click)="toggleOptimization()">
+        {{ showOptimized ? 'Disable' : 'Enable' }} content-visibility
+      </button>
+      <p class="status">Status: {{ showOptimized ? 'Optimized' : 'Unoptimized' }}</p>
+    </div>
+  </section>
+
+  <section class="content-blocks">
+    <app-content-block
+      *ngFor="let block of blocks"
+      [title]="block"
+      [optimized]="showOptimized">
+    </app-content-block>
+  </section>
+</div> 
